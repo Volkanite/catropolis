@@ -29,9 +29,26 @@ function go_nxt(){
   }
   scro_img();
 }
+
+function sleep(ms) 
+{
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function start_slide(ms)
+{
+    while(1)
+    {
+        go_nxt();
+
+        await sleep(ms);
+    }
+}
+
+function slide_show()
+{
+    start_slide(5000);
+}
+
 scro_img();
-
-
-
-
-
+slide_show();
