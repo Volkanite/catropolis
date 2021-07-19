@@ -1,6 +1,6 @@
 
 
-console.log(100)
+//console.log(100)
 
 let items=document.querySelectorAll("div img");
 let currentIndex=0;

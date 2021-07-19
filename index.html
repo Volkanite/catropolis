@@ -7,6 +7,7 @@
         <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'/> <!--先避免網頁自動縮放，RWD寫在css-->
         <link rel="stylesheet" type="text/css" href="css/list.css"/>
         <script defer src="js/list.js"></script>
+        <script defer src="js/slider.js"></script>
         
         <!--title:網頁的標題-->
     </head>
@@ -14,16 +15,27 @@
 
     <body>
         <header><h1>Content List</h1></header>
+        
         <section>
+
+            <!-- Slider -->
+            <div class="slider">
+                <img src="imgs/IMG_1.jpeg"/>
+                <img src="imgs/IMG_2.jpeg" alt="the photo is missing"/>
+                <img src="imgs/IMG_3.jpeg"/>
+                <img src="imgs/IMG_4.jpeg"/>
+                <img src="imgs/IMG_5.jpeg"/>
+                <button class="pre_btn" onclick="go_pre()"><</button>
+                <button class="nxt_btn" onclick="go_nxt()">></button>
+            </div>
+
+            <!-- Items -->
             <div id='items_layout' class='items-layout'>
             </div>
+
         </section>
-    </body>
-
-      
         
-
-
+    </body>
 
 </html>
 
