@@ -8,3 +8,5 @@ This website is a consolidated effort team B7, comprising the following members:
 - [Hassanatu Bah](https://github.com/hasana2)
 - [Huan Chen](https://github.com/Huan-Ting)
 - Kendrick Liverpool
+
+Please read the [Rules](https://github.com/Volkanite/catropolis/wiki/Code-of-conduct) before contributing to this repository.
