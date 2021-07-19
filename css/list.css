@@ -1,0 +1,137 @@
+html{
+    background-color: rgb(241, 239, 239);
+}
+
+
+header h1{
+    font-size: 40px;
+    text-align:center;
+    color: rgb(31, 30, 30);
+}
+
+
+section {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.item {
+    max-width: 220px;
+    height: 350px;
+    border:solid 1px rgb(216, 217, 218);
+    border-radius: 5%;
+    background-color: rgb(239, 239, 245);
+    margin: 10px;
+    padding:10px;
+    display: inline-block;
+    vertical-align:top;
+    overflow:hidden;
+}
+
+.item_img img{
+    border-radius: 4%;
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+.item_name{
+    font-size: x-large;
+    font-weight: bold;
+    margin: 5px;
+    padding: 5px;
+    
+}
+
+.item_type{
+    font-size: 10px;
+    background-color: rgb(2, 41, 124);
+    color: blanchedalmond;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10%;
+    float: right;
+}
+
+
+.item_body li{
+    font-size: 15px;
+    color: rgb(61, 60, 60);
+    
+    
+}
+
+.filter-division {
+    flex: 100%;
+    display: flex;
+    justify-content: center;  
+  }
+
+.filter-element {
+    display: flex;
+    margin: 0 auto;
+    height: 24px;
+    font-size: 14px;
+    
+  }
+  
+  .filter-element span {
+    line-height: 24px;
+  }
+  
+  .filter-element select {
+    border-radius: 5px;
+    width: 100px;
+  }
+
+
+  .pagination_div{
+    flex:100%;
+    display: flex;
+    justify-content: center; 
+  }
+
+  .pagination{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+  }
+
+  .pagination li {
+    color: #050557;
+    border: 1px solid #cccbca;
+    border-radius: 5px;
+    padding: 2px 8px;
+    cursor: pointer;
+    margin: 0 1px;
+  }
+  .pagination li.active{
+      background-color: #ccd8f7;
+  }
+
+  .pagination li.disabled{
+      background-color: rgb(244, 240, 240);
+      color: rgb(223, 219, 219);
+      border-color: #cccbca;
+  }
+
+
+
+
+
+/* 調整列表內容的parent的寬度，只列表內容自動調到下一排 */
+@media screen and (max-width:600px) {
+    section {
+        width: 100%;
+        vertical-align: center;
+    }
+    .item_name{
+        font-size: 23px;
+        margin: 3px;
+        padding: 3px;
+        
+    }
+}
