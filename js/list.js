@@ -69,6 +69,7 @@ function renderDataFilter() {
 
 function layoutItems(items){
     items_layout_query.innerHTML = '<div id="filter-division" class="filter-division"></div>';
+    let i = 1;
     
     totalPage= Math.floor((items.length-1)/4)+1;
     const itemsInCertainPage=items.slice((currentPage-1)*numbersInaPage,currentPage*numbersInaPage);
@@ -78,8 +79,11 @@ function layoutItems(items){
 
     itemsInCertainPage.forEach(function(item){
         let item_html="";
+
         item_html+="<div class=item>";
+        item_html+='<a href="'+"cat.html?id="+ i++ +'">';
         item_html+='<div class=item_img><img src="'+item.image_link+'"/></div>';
+        item_html+='</a>';
         item_html+='<div><span class=item_name>'+item.name+'</span>';
         item_html+='<span class=item_type>'+item.type+'</span></div>';
         item_html+='<div class=item_body>';
