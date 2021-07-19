@@ -10,3 +10,10 @@ This website is a consolidated effort team B7, comprising the following members:
 - Kendrick Liverpool
 
 Please read the [Rules](https://github.com/Volkanite/catropolis/wiki/Code-of-conduct) before contributing to this repository.
+
+
+Header:
+-Logo: Breakout 7
+-Our Team: Team information as homepage
+-Adopting: lead to adopting page
+-Have Fun: lead to memory game
