@@ -79,6 +79,86 @@
         "gender":"Male",
         "description":"Food is everything",
         "image_link":"imgs/IMG_Rogie.jpeg"
+        },
+    {
+        "name":"Amiao",
+        "type":"Calico",
+        "age":3,
+        "gender":"Female",
+        "description":"Rub me plz",
+        "image_link":"imgs/IMG_Amiao.jpg"
+        },
+    {
+        "name":"Amiao",
+        "type":"Calico",
+        "age":3,
+        "gender":"Female",
+        "description":"Rub me plz",
+        "image_link":"imgs/IMG_Amiao.jpg"
+        },
+    {
+        "name":"Amiao",
+        "type":"Calico",
+        "age":3,
+        "gender":"Female",
+        "description":"Rub me plz",
+        "image_link":"imgs/IMG_Amiao.jpg"
+        },
+    {
+        "name":"Rogie",
+        "type":"Chinchila",
+        "age":2,
+        "gender":"Male",
+        "description":"Food is everything",
+        "image_link":"imgs/IMG_Rogie.jpeg"
+        },  
+    {
+        "name":"Mimi",
+        "type":"Chinchila",
+        "age":14,
+        "gender":"Female",
+        "description":"Such an angel",
+        "image_link": "imgs/IMG_Mimi.jpeg"
+        }, 
+    {
+        "name":"Ben",
+        "type":"Tabby",
+        "age":1,
+        "gender":"Male",
+        "description":"Brave boy",
+        "image_link": "imgs/IMG_Ben.jpeg"
+        }, 
+    {
+        "name":"Jhu",
+        "type":"Ginger",
+        "age":1,
+        "gender":"Male",
+        "description":"Always patient",
+        "image_link": "imgs/IMG_Jhu.jpeg"
+        },
+    {
+        "name":"Snowflake Cake",            
+        "type":"Tabby",
+        "age":3,
+        "gender":"Female",
+        "description":"Invisibility is my superpower",
+        "image_link": "imgs/IMG_Snow.jpg"
+        },
+    {
+        "name":"Rogie",
+        "type":"Chinchila",
+        "age":2,
+        "gender":"Male",
+        "description":"Food is everything",
+        "image_link":"imgs/IMG_Rogie.jpeg"
+        },
+    {
+        "name":"Rogie",
+        "type":"Chinchila",
+        "age":2,
+        "gender":"Male",
+        "description":"Food is everything",
+        "image_link":"imgs/IMG_Rogie.jpeg"
         }
     ]
 }
