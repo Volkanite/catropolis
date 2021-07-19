@@ -3,7 +3,7 @@ let totalItems = [];
 let typeFilter = "All";
 let currentPage=1;
 let totalPage=0;
-const numbersInaPage=4
+const numbersInaPage=8
 let items_layout_query=document.getElementById('items_layout');
 
 
@@ -84,6 +84,7 @@ function layoutItems(items){
         item_html+='<span class=item_type>'+item.type+'</span></div>';
         item_html+='<div class=item_body>';
         item_html+='<div class=item_attr><ul><li>age:'+item.age+'</li><li>'+item.gender+'</li><li>'+item.description+'</li></ul></div>';
+        item_html+=`<button class="adopt-btn"> Adopt </button>`;
         item_html+='</div>';
         item_html+='</div>';
 
