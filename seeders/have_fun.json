@@ -1,0 +1,105 @@
+{
+    "items":[
+    {
+        "name":"Amiao",
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img":"imgs/IMG_Amiao.jpg"
+        },
+    {
+        "name":"Amiao",
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img":"imgs/IMG_Amiao.jpg"
+        },
+    
+    {
+        "name":"Rogie",
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img":"imgs/IMG_Rogie.jpeg"
+        }, 
+    {
+        "name":"Rogie",
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img":"imgs/IMG_Rogie.jpeg"
+        }, 
+    {
+        "name":"Mimi",
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_Mimi.jpeg"
+        }, 
+    {
+        "name":"Mimi",
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_Mimi.jpeg"
+        },
+    {
+        "name":"Ben",
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_Ben.jpeg"
+        },
+    {
+        "name":"Ben",
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_Ben.jpeg"
+        }, 
+    {
+        "name":"Jhu",
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_Jhu.jpeg"
+        },
+    {
+        "name":"Jhu",
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_Jhu.jpeg"
+        },
+    {
+        "name":"Snowflake Cake",            
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_Snow.jpg"
+        },
+    {
+        "name":"Snowflake Cake",            
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_Snow.jpg"
+        },
+    {
+        "name":"Seven",            
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_7.jpeg"
+        },
+    {
+        "name":"Seven",            
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_7.jpeg"
+        },
+    {
+        "name":"eight",            
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_8.jpg"
+        },
+    {
+        "name":"eight",            
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_8.jpg"
+        },
+    {
+        "name":"nine",            
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_9.png"
+        },
+    {
+        "name":"nine",            
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_9.png"
+        },
+    {
+        "name":"Ten",            
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_10.jpg"
+        },
+    {
+        "name":"Ten",            
+        "shown_img":"imgs/shown_img.jpg",
+        "hidden_img": "imgs/IMG_10.jpg"
+        }
+    ]
+}
