@@ -13,7 +13,7 @@ Please read the [Rules](https://github.com/Volkanite/catropolis/wiki/Code-of-con
 
 
 Header:
--Logo: Breakout 7
--Our Team: Team information as homepage
--Adopting: lead to adopting page
--Have Fun: lead to memory game
+- Logo: Breakout 7
+- Our Team: Team information as homepage
+- Adopting: lead to adopting page
+- Have Fun: lead to memory game
