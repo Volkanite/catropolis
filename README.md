@@ -1,4 +1,5 @@
-# catropolis
+<h1 align="center">Catropolis</h1>
+
 Cat adaption website created by B7 (Breakout 7) for their team project of web programming class taught by Ivan Chiou June-July 2021.
 
 This website is a consolidated effort team B7, comprising the following members:  
