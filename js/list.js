@@ -131,20 +131,44 @@ let id=[];
 
 function renderCartInfo(){
     numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
-}
+};
+
+
+
+
 
 function adoptThisCat(adoptedItemBtn){ //condition need to be replace with id.length within 24hours
-    if(id.length<3){
-        id_no=Number(adoptedItemBtn.dataset.id);
+    let id_no=Number(adoptedItemBtn.dataset.id);
+    let x=0;
+    id.forEach(function(id){
+        if(id==id_no+(currentPage-1)*8){
+            return;
+        }else{
+            x++;
+        };
+    })
+
+    if(x==id.length){
         id.push(id_no+(currentPage-1)*8);
     }else{
-        alert('A person can adopt no more than THREE cats. You can come back tomorow');
+        alert('This Cat is Already In The Cart.');
+        return;
     }
-
+    
     numberHtml.innerHTML="";
     adoptedNumber++;
     numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
     alert('The Cat Is Added To Your Adoption-Cart!  Click Your Cart To Check Cats You Adopt.');
-    
 }
+
+/*
+if(id.length<3){
+    id.push(id_no+(currentPage-1)*8);
+}else{
+    alert('A person can adopt no more than THREE cats. You can come back tomorow');
+}
+*/
+
+
+
 
