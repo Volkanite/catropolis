@@ -94,7 +94,7 @@ function layoutItems(items){
         item_html+='<span class=item_type>'+item.type+'</span></div>';
         item_html+='<div class=item_body>';
         item_html+='<div class=item_attr><ul><li>age:'+item.age+'</li><li>'+item.gender+'</li><li>'+item.description+'</li></ul></div>';
-        item_html+='<button class="adopt-btn" onclick="adoptThisCat(this)" data-id="'+ id++ +'"> Adopt </button>';
+        item_html+='<button class="adopt-btn" onclick="adoptThisCat(this)" data-id="'+ (id++) +'"> Adopt </button>';
         item_html+='</div>';
         item_html+='</div>';
 
@@ -133,8 +133,13 @@ function renderCartInfo(){
     numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
 }
 
-function adoptThisCat(adoptedItemBtn){
-    id.push(adoptedItemBtn.dataset.id);
+function adoptThisCat(adoptedItemBtn){ //condition need to be replace with id.length within 24hours
+    if(id.length<3){
+        id_no=Number(adoptedItemBtn.dataset.id);
+        id.push(id_no+(currentPage-1)*8);
+    }else{
+        alert('A person can adopt no more than THREE cats. You can come back tomorow');
+    }
 
     numberHtml.innerHTML="";
     adoptedNumber++;
