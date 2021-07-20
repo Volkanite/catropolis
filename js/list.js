@@ -135,8 +135,6 @@ function renderCartInfo(){
 
 
 
-
-
 function adoptThisCat(adoptedItemBtn){ //condition need to be replace with id.length within 24hours
     let id_no=Number(adoptedItemBtn.dataset.id);
     let x=0;
@@ -161,13 +159,6 @@ function adoptThisCat(adoptedItemBtn){ //condition need to be replace with id.le
     alert('The Cat Is Added To Your Adoption-Cart!  Click Your Cart To Check Cats You Adopt.');
 }
 
-/*
-if(id.length<3){
-    id.push(id_no+(currentPage-1)*8);
-}else{
-    alert('A person can adopt no more than THREE cats. You can come back tomorow');
-}
-*/
 
 
 
