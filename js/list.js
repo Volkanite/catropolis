@@ -130,16 +130,14 @@ const numberHtml=document.getElementsByClassName("cart-number");
 let id=[];
 
 function renderCartInfo(){
-    numberHtml[0].innerHTML=`<a href="cart.html?id=${id}"><div>Cart: ${adoptedNumber}</div></a>`;
+    numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank">Cart: ${adoptedNumber}</a>`;
 }
 
 function adoptThisCat(adoptedItemBtn){
     id.push(adoptedItemBtn.dataset.id);
-    
+
     numberHtml.innerHTML="";
     adoptedNumber++;
-    numberHtml[0].innerHTML=`<a href="cart.html?id=${id}"><div>Cart: ${adoptedNumber}</div></a>`;
+    numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank">Cart: ${adoptedNumber}</a>`;
 }
-
-
 
