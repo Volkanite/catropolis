@@ -1,0 +1,6 @@
+.item_img img{
+    border-radius: 4%;
+    display: block;
+    width: 600px;
+    height: 600px;
+}
