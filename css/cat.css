@@ -4,3 +4,21 @@
     width: 600px;
     height: 600px;
 }
+
+.item_name{
+    font-size: x-large;
+    font-weight: bold;
+    margin: 10px;
+    padding: 5px;
+}
+
+.item_type{
+    font-size: 10px;
+    background-color: rgb(239, 239, 245);
+    color: rgb(34, 22, 105);
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10%;
+    border: 1px solid rgb(34, 22, 105);
+    position: relative;
+}
