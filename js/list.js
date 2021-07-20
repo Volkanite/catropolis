@@ -139,5 +139,7 @@ function adoptThisCat(adoptedItemBtn){
     numberHtml.innerHTML="";
     adoptedNumber++;
     numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank">Cart: ${adoptedNumber}</a>`;
+    alert('The Cat Is Added To Your Adoption-Cart!  Click Your Cart To Check Cats You Adopt.');
+    
 }
 
