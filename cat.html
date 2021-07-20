@@ -2,13 +2,26 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="css/cat.css"/>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+
+    <!-- Custom Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="css/cat.css" />
 </head>
 
 <body>
     <!-- Items -->
     <div id='items_layout' class='items-layout'>
     </div>
+
+    <aside>
+        <!-- comments -->
+        <h2>Comments</h2>
+        <div id=comments></div>
+    </aside>
+
+
 </body>
 
 <script>
@@ -25,12 +38,16 @@
 
             if (id == catId) {
 
+                id++;
+
                 item_html += "<div class=item>";
                 item_html += '<a href="' + "cat.html?id=" + id + '">';
                 item_html += '<div class=item_img><img src="' + item.image_link + '"/></div>';
                 item_html += '</a>';
                 item_html += '<div><span class=item_name>' + item.name + '</span>';
                 item_html += '<span class=item_type>' + item.type + '</span></div>';
+                item_html += '<button class="listen-btn" onclick="adoptThisCat(this)" data-id="' + id + '"> Listen </button>';
+                item_html += '<button class="adopt-btn" onclick="adoptThisCat(this)" data-id="' + id + '"> Adopt </button>';
                 item_html += '<div class=item_body>';
                 item_html += '<div class=item_attr><ul><li>age:' + item.age + '</li><li>' + item.gender + '</li><li>' + item.description + '</li></ul></div>';
                 item_html += '</div>';
@@ -66,6 +83,25 @@
 
         readJSONFile("./seeders/item.json");
     }
+
+    /* Database GET */
+    $(document).ready(function () {
+        $.get('https://homework3-8b52e-default-rtdb.firebaseio.com/.json', null, function (res) {
+            Object.keys(res.test).forEach((key, index) => {
+                let html_to_insert = "";
+
+                html_to_insert += res.test[key].name;
+                html_to_insert += '<br>'
+                html_to_insert += res.test[key].email;
+                html_to_insert += '<br>'
+                html_to_insert += res.test[key].message;
+                html_to_insert += '<br> <br>'
+
+                document.getElementById('comments').innerHTML += html_to_insert;
+            })
+        }
+        );
+    });
 
     loadData();
 </script>
