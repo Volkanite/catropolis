@@ -211,6 +211,7 @@ a:hover{
 }
 
 .cart-number{
+  z-index: 100;
   position: relative;
   top: 250px;
   color: red;

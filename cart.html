@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Homework</title>
-        <meta charset="UTF-16">
-        <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'/> <!--先避免網頁自動縮放，RWD寫在css-->
-        <link rel="stylesheet" type="text/css" href="css/list.css"/>
-        <script defer src="js/list.js"></script>
-        <script defer src="js/slider.js"></script>
-    </head>
-    <body>
-        <div id="cart-items"></div>
-    </body>
+
+<head>
+    <title>Homework</title>
+    <meta charset="UTF-16">
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
+    <!--先避免網頁自動縮放，RWD寫在css-->
+    <link rel="stylesheet" type="text/css" href="css/list.css" />
+</head>
+
+<body>
+    <div id="cart-items"></div>
+</body>
+<script>
+    var params = new URLSearchParams(window.location.search);
+    let id = params.get("id").split(",");
+    
+    console.log(id);
+    const adoptedCats = document.querySelector('#cart-items');
+
+    function renderItem(totalItems) {
+        id.forEach(function (id) {
+            adoptedCats.innerHTML+=
+                `
+                <div><img src="${totalItems[id].image_link}"/></div>
+                <div>${totalItems[id].name}</div>
+                `;
+  
+        })
+    }
+
+
+    function readJSONFile(file) {
+        fetch(file).then(response => {
+            return response.json();
+        }).then(data => {
+            let totalItems = data.items;
+            renderItem(totalItems);
+        });
+    }
+    readJSONFile("./seeders/item.json")
+</script>
 </html>
