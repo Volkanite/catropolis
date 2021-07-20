@@ -130,7 +130,7 @@ const numberHtml=document.getElementsByClassName("cart-number");
 let id=[];
 
 function renderCartInfo(){
-    numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank">Cart: ${adoptedNumber}</a>`;
+    numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
 }
 
 function adoptThisCat(adoptedItemBtn){
@@ -138,7 +138,7 @@ function adoptThisCat(adoptedItemBtn){
 
     numberHtml.innerHTML="";
     adoptedNumber++;
-    numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank">Cart: ${adoptedNumber}</a>`;
+    numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
     alert('The Cat Is Added To Your Adoption-Cart!  Click Your Cart To Check Cats You Adopt.');
     
 }
