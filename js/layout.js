@@ -1,1 +1,1 @@
-$( "header" ).load( "layout/header.html div" );
+$( "header" ).load( "layout/header.html" );
