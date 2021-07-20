@@ -70,7 +70,8 @@ function renderDataFilter() {
 function layoutItems(items){
     items_layout_query.innerHTML = '<div id="filter-division" class="filter-division"></div>';
     let i = 1;
-    
+    let id=0;
+
     totalPage= Math.floor((items.length-1)/numbersInaPage)+1;
     const itemsInCertainPage=items.slice((currentPage-1)*numbersInaPage,currentPage*numbersInaPage);
     renderPagitation();
@@ -88,7 +89,7 @@ function layoutItems(items){
         item_html+='<span class=item_type>'+item.type+'</span></div>';
         item_html+='<div class=item_body>';
         item_html+='<div class=item_attr><ul><li>age:'+item.age+'</li><li>'+item.gender+'</li><li>'+item.description+'</li></ul></div>';
-        item_html+=`<button class="adopt-btn"> Adopt </button>`;
+        item_html+='<button class="adopt-btn" onclick="adoptThisCat(this)" data-id="'+ id++ +'"> Adopt </button>';
         item_html+='</div>';
         item_html+='</div>';
 
@@ -107,7 +108,33 @@ function readJSONFile(file) {
     }).then(data => {
         totalItems = data.items;
         layoutItems(totalItems);
+        renderCartInfo();
     });
 }
 
 readJSONFile("./seeders/item.json")
+
+
+
+
+
+
+//Cart
+let adoptedNumber=0;
+const numberHtml=document.getElementsByClassName("cart-number");
+let id=[];
+
+function renderCartInfo(){
+    numberHtml[0].innerHTML=`<a href="cart.html?id=${id}"><div>Cart: ${adoptedNumber}</div></a>`;
+}
+
+function adoptThisCat(adoptedItemBtn){
+    id.push(adoptedItemBtn.dataset.id);
+    
+    numberHtml.innerHTML="";
+    adoptedNumber++;
+    numberHtml[0].innerHTML=`<a href="cart.html?id=${id}"><div>Cart: ${adoptedNumber}</div></a>`;
+}
+
+
+
