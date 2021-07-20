@@ -9,22 +9,6 @@
         "image_link":"imgs/IMG_Amiao.jpg"
         },
     {
-        "name":"Amiao",
-        "type":"Calico",
-        "age":3,
-        "gender":"Female",
-        "description":"Rub me plz",
-        "image_link":"imgs/IMG_Amiao.jpg"
-        },
-    {
-        "name":"Amiao",
-        "type":"Calico",
-        "age":3,
-        "gender":"Female",
-        "description":"Rub me plz",
-        "image_link":"imgs/IMG_Amiao.jpg"
-        },
-    {
         "name":"Rogie",
         "type":"Chinchila",
         "age":2,
@@ -65,100 +49,92 @@
         "image_link": "imgs/IMG_Snow.jpg"
         },
     {
-        "name":"Rogie",
-        "type":"Chinchila",
-        "age":2,
-        "gender":"Male",
-        "description":"Food is everything",
-        "image_link":"imgs/IMG_Rogie.jpeg"
-        },
-    {
-        "name":"Rogie",
-        "type":"Chinchila",
-        "age":2,
-        "gender":"Male",
-        "description":"Food is everything",
-        "image_link":"imgs/IMG_Rogie.jpeg"
-        },
-    {
-        "name":"Amiao",
-        "type":"Calico",
-        "age":3,
-        "gender":"Female",
-        "description":"Rub me plz",
-        "image_link":"imgs/IMG_Amiao.jpg"
-        },
-    {
-        "name":"Amiao",
-        "type":"Calico",
-        "age":3,
-        "gender":"Female",
-        "description":"Rub me plz",
-        "image_link":"imgs/IMG_Amiao.jpg"
-        },
-    {
-        "name":"Amiao",
-        "type":"Calico",
-        "age":3,
-        "gender":"Female",
-        "description":"Rub me plz",
-        "image_link":"imgs/IMG_Amiao.jpg"
-        },
-    {
-        "name":"Rogie",
-        "type":"Chinchila",
-        "age":2,
-        "gender":"Male",
-        "description":"Food is everything",
-        "image_link":"imgs/IMG_Rogie.jpeg"
-        },  
-    {
-        "name":"Mimi",
-        "type":"Chinchila",
-        "age":14,
-        "gender":"Female",
-        "description":"Such an angel",
-        "image_link": "imgs/IMG_Mimi.jpeg"
-        }, 
-    {
-        "name":"Ben",
+        "name":"Didi",            
         "type":"Tabby",
-        "age":1,
-        "gender":"Male",
-        "description":"Brave boy",
-        "image_link": "imgs/IMG_Ben.jpeg"
-        }, 
+        "age":5,
+        "gender":"Female",
+        "description":"Catch me if you can",
+        "image_link": "imgs/IMG_7.jpeg"
+        },
     {
-        "name":"Jhu",
+        "name":"Aby",            
+        "type":"Tabby",
+        "age":8,
+        "gender":"Male",
+        "description":"Shake shake",
+        "image_link": "imgs/IMG_8.jpg"
+        },
+    {
+        "name":"Sean",            
+        "type":"White",
+        "age":9,
+        "gender":"Male",
+        "description":"I'm tall",
+        "image_link": "imgs/IMG_9.png"
+        },
+    {
+        "name":"Alisha",            
         "type":"Ginger",
+        "age":5,
+        "gender":"Female",
+        "description":"Being Cool",
+        "image_link": "imgs/IMG_10.jpg"
+        },
+    {
+        "name":"Shoky",            
+        "type":"White",
+        "age":10,
+        "gender":"Male",
+        "description":"Oops",
+        "image_link": "imgs/IMG_11.jpg"
+        },
+    {
+        "name":"Yoga",            
+        "type":"Ginger",
+        "age":7,
+        "gender":"Male",
+        "description":"I'm flexable",
+        "image_link": "imgs/IMG_12.jpg"
+        },
+     {
+        "name":"Ball",            
+        "type":"Ginger",
+        "age":12,
+        "gender":"Male",
+        "description":"I can fly",
+        "image_link": "imgs/IMG_13.jpg"
+        },
+    {
+        "name":"Sleepy",            
+        "type":"Tabby",
+        "age":1,
+        "gender":"Female",
+        "description":"Anywhere I can sleep",
+        "image_link": "imgs/IMG_14.jpg"
+        },
+    {
+        "name":"Fuffy",            
+        "type":"Ginger",
+        "age":4,
+        "gender":"Female",
+        "description":"I think",
+        "image_link": "imgs/IMG_15.jpg"
+        },
+    {
+        "name":"Jojo",            
+        "type":"Tabby",
+        "age":8,
+        "gender":"Female",
+        "description":"I love travle",
+        "image_link": "imgs/IMG_16.jpg"
+        },
+    {
+        "name":"Kiki",            
+        "type":"Tabby",
         "age":1,
         "gender":"Male",
-        "description":"Always patient",
-        "image_link": "imgs/IMG_Jhu.jpeg"
-        },
-    {
-        "name":"Snowflake Cake",            
-        "type":"Tabby",
-        "age":3,
-        "gender":"Female",
-        "description":"Invisibility is my superpower",
-        "image_link": "imgs/IMG_Snow.jpg"
-        },
-    {
-        "name":"Rogie",
-        "type":"Chinchila",
-        "age":2,
-        "gender":"Male",
-        "description":"Food is everything",
-        "image_link":"imgs/IMG_Rogie.jpeg"
-        },
-    {
-        "name":"Rogie",
-        "type":"Chinchila",
-        "age":2,
-        "gender":"Male",
-        "description":"Food is everything",
-        "image_link":"imgs/IMG_Rogie.jpeg"
+        "description":"I will grow",
+        "image_link": "imgs/IMG_17.jpg"
         }
     ]
 }

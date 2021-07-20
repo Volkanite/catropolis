@@ -70,7 +70,7 @@ function renderDataFilter() {
 function layoutItems(items){
     items_layout_query.innerHTML = '<div id="filter-division" class="filter-division"></div>';
     
-    totalPage= Math.floor((items.length-1)/4)+1;
+    totalPage= Math.floor((items.length-1)/numbersInaPage)+1;
     const itemsInCertainPage=items.slice((currentPage-1)*numbersInaPage,currentPage*numbersInaPage);
     renderPagitation();
 
