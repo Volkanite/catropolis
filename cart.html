@@ -2,12 +2,16 @@
 <html>
 
 <head>
-    <title>Homework</title>
+    <title>Catropolis</title>
     <meta charset="UTF-16">
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
-    <!--先避免網頁自動縮放，RWD寫在css-->
-    <link rel="stylesheet" type="text/css" href="css/cart.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script> <!--for cookies-->
+    <script defer src="js/layout.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/list.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="css/cart.css" />
+    
 </head>
 <header></header>
 <body>
@@ -23,28 +27,33 @@
 
 
 <script>
-
-    
     function readJSONFile(file) {
         fetch(file).then(response => {
             return response.json();
         }).then(data => {
             let totalItems = data.items;
-            renderItem(totalItems);
+            getDataRender(totalItems);
         });
     }
     readJSONFile("./seeders/item.json")
 
-
+/*
     var params = new URLSearchParams(window.location.search);
     let id = params.get("id").split(",");
-    
+ */   
+
+    let user = $.cookie("user");
     const adoptedCats = document.querySelector('#cart-items');
 
+function getDataRender(totalItems){
 
-    function renderItem(totalItems) {
-        id.forEach(function (id) {
-            adoptedCats.innerHTML+=
+    $.get(` https://catropolis-55dac-default-rtdb.firebaseio.com/User-Cart/${user}/.json`, null, function (res) {
+
+        let id=Object.keys(res);
+        console.log(id);
+        
+            id.forEach(function (id) {
+                adoptedCats.innerHTML+=
                 `
                 <div class="adopted-cat">
                 <div class="img"><img src="${totalItems[id].image_link}"/></div>
@@ -55,10 +64,16 @@
                 </div>
                 <hr>
                 `;
-  
-        })
-    }
+            })
 
+    })
+}    
+
+
+
+    
+    
+/*
     function del(deleteCat){
         for(let i=0; i<id.length; i++){
             if(id[i]===deleteCat.dataset.id){
@@ -67,6 +82,6 @@
         }
         renderItem(totalItems);
     };
-
+*/
 </script>
 </html>

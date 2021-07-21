@@ -124,13 +124,13 @@ readJSONFile("./seeders/item.json")
 
 
 
-//Cart
+//----------------Cart
 let adoptedNumber=0;
 const numberHtml=document.getElementsByClassName("cart-number");
 let id=[];
 
 
-
+//Delete it after sign-in system built
 $(document).ready(function(){
     if(!$.cookie("user")||$.cookie("user")===null){
         let user=prompt("Please enter User name","Type your name here");
