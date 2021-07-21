@@ -129,30 +129,38 @@ let adoptedNumber=0;
 const numberHtml=document.getElementsByClassName("cart-number");
 let id=[];
 
-let user=prompt("Please enter User name");
+
+
+$(document).ready(function(){
+    if(!$.cookie("user")||$.cookie("user")===null){
+        let user=prompt("Please enter User name","Type your name here");
+        $.cookie("user",user);
+    }
+});
+
 
 function renderCartInfo(){
     numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
 };
 
+
 function adoptThisCat(adoptedItemBtn){ 
     let id_no=Number(adoptedItemBtn.dataset.id);
     let catID=(id_no+(currentPage-1)*8);
     let x=0;
+    let user = $.cookie("user");
 
     function sendToDB(){
-        $(document).ready(function () {
-            let data={
-                id:catID
-            };
-            firebase.database().ref("User-Cart/" + user +"/"+ data.id ).set(data, function (error) {    
-                if (error) {
-                    console.log(error); 
-                } else {
-                    alert('The Cat Is Added To Your Adoption-Cart!  Click Your Cart To Check Cats You Adopt.');
-                }
-            })
-        })
+        let data={
+            id:catID
+        };
+        firebase.database().ref("User-Cart/" + user +"/"+ data.id ).set(data, function (error) {    
+            if (error) {
+                console.log(error); 
+            } else {
+                alert('The Cat Is Added To Your Adoption-Cart!  Click Your Cart To Check Cats You Adopt.');
+            }
+        }) 
     }
 
     function renderCartAfterAdopt(){
