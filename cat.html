@@ -15,7 +15,7 @@
 <body>
     <header></header>
     <!-- Items -->
-    <div id='items_layout' class='items-layout'>
+    <div id='cat_items_layout' class='cat-items-layout'>
     </div>
 
     <aside>
@@ -32,7 +32,7 @@
 
     function layoutItems(items) {
 
-        let items_layout_query = document.getElementById('items_layout');
+        let items_layout_query = document.getElementById('cat_items_layout');
         items_layout_query.innerHTML = ' ';
         let id = 1;
 
@@ -43,9 +43,9 @@
 
                 id++;
 
-                item_html += "<div class=item>";
+                item_html += "<div class=cat_item>";
                 item_html += '<a href="' + "cat.html?id=" + id + '">';
-                item_html += '<div class=item_img><img src="' + item.image_link + '"/></div>';
+                item_html += '<div class=cat_item_img><img src="' + item.image_link + '"/></div>';
                 item_html += '</a>';
                 item_html += '<div><span class=item_name>' + item.name + '</span>';
                 item_html += '<span class=item_type>' + item.type + '</span></div>';
