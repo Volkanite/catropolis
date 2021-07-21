@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html style="background-color:rgb(255, 255, 255); ">
+
+<head>
+    <title>Submit_form</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/list.css"/>
+    <script defer src="js/layout.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <header></header>
+    <div class="d-flex m-4" >
+        <form action="https://submit-form-5e52f-default-rtdb.firebaseio.com/.json" method="post"
+            class="flex-fill d-flex flex-column align-items-center" style="height: 200px;">
+            <div class="mb-3 col-md-6 p-2">
+                <!--column寬度：col-md-4-->
+                <label for="name" class="form-label ">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter Name" class="form-control required" />
+            </div>
+            <div class="mb-3 col-md-6 p-2">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control  required" id="email" aria-describedby="emailHelp"
+                    placeholder="Enter Email">
+                <div id="emailHelp" class="form-text form-control-sm text-muted">We'll never share your email with
+                    anyone else.</div>
+            </div>
+            <div class="form-group col-md-6 p-2">
+                <label for="message">Massage</label>
+                <textarea class="form-control " id="message" name="message" placeholder="Enter Massage"
+                    rows="4"></textarea>
+            </div>
+            <button type="submit" class="col-md-3 btn btn-primary">Submit</button>
+        </form>
+
+    </div>
+</body>
+
+
+
+
+
+
+<!--------------------------------------複製code from FireBase 加上 -auth.js  / -database.js 資料夾連結------------------------------------->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBrZx3TblBX2_LPTerV8NJW_NnoyGCvp_0",
+        authDomain: "catropolis-55dac.firebaseapp.com",
+        databaseURL: "https://catropolis-55dac-default-rtdb.firebaseio.com",
+        projectId: "catropolis-55dac",
+        storageBucket: "catropolis-55dac.appspot.com",
+        messagingSenderId: "474146613497",
+        appId: "1:474146613497:web:d3accd00e71146340b1a28",
+        measurementId: "G-GWR0NP23YG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+
+
+
+<!--------------------------------------重寫submit的功能，組織資料的結構，錯誤或成功回傳提示------------------------------------->
+<script>
+    //.ready() 幾乎相當於 window.onload
+    $(document).ready(function () {  
+        $("form").on("submit", function () {
+            event.preventDefault();
+            let data = {
+                name: $("#name").val(),
+                email: $("#email").val(),
+                message: $("#message").val()
+            }
+            firebase.database().ref("contact/" + data.name).set(data, function (error) {    
+                if (error) {
+                    console.log(error);
+                } else {
+                    alert("success");
+                    location.reload();   
+                }
+            })
+        })
+    })
+
+
+</script>
+
+</html>

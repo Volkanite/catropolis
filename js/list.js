@@ -129,17 +129,40 @@ let adoptedNumber=0;
 const numberHtml=document.getElementsByClassName("cart-number");
 let id=[];
 
+let user=prompt("Please enter User name");
+
 function renderCartInfo(){
     numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
 };
 
-
-
-function adoptThisCat(adoptedItemBtn){ //condition need to be replace with id.length within 24hours
+function adoptThisCat(adoptedItemBtn){ 
     let id_no=Number(adoptedItemBtn.dataset.id);
+    let catID=(id_no+(currentPage-1)*8);
     let x=0;
+
+    function sendToDB(){
+        $(document).ready(function () {
+            let data={
+                id:catID
+            };
+            firebase.database().ref("User-Cart/" + user +"/"+ data.id ).set(data, function (error) {    
+                if (error) {
+                    console.log(error); 
+                } else {
+                    alert('The Cat Is Added To Your Adoption-Cart!  Click Your Cart To Check Cats You Adopt.');
+                }
+            })
+        })
+    }
+
+    function renderCartAfterAdopt(){
+        numberHtml.innerHTML="";
+        adoptedNumber++;
+        numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
+    }
+
     id.forEach(function(id){
-        if(id==id_no+(currentPage-1)*8){
+        if(id==catID){
             return;
         }else{
             x++;
@@ -147,16 +170,15 @@ function adoptThisCat(adoptedItemBtn){ //condition need to be replace with id.le
     })
 
     if(x==id.length){
-        id.push(id_no+(currentPage-1)*8);
+        console.log(catID);
+        id.push(catID);
+
+        renderCartAfterAdopt();
+        sendToDB();
     }else{
         alert('This Cat is Already In The Cart.');
         return;
-    }
-    
-    numberHtml.innerHTML="";
-    adoptedNumber++;
-    numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
-    alert('The Cat Is Added To Your Adoption-Cart!  Click Your Cart To Check Cats You Adopt.');
+    }  
 }
 
 
