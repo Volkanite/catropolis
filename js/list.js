@@ -125,10 +125,11 @@ readJSONFile("./seeders/item.json")
 
 
 //----------------Cart
+let user = $.cookie("user");
 let adoptedNumber=0;
 const numberHtml=document.getElementsByClassName("cart-number");
 let id=[];
-let user = $.cookie("user");
+
 
 
 //Delete it after sign-in system built
@@ -139,22 +140,13 @@ $(document).ready(function(){
     }
 });
 
-/*
+
 function renderCartInfo(){
     $.get(` https://catropolis-55dac-default-rtdb.firebaseio.com/User-Cart/${user}/.json`, null, function (res) {
         console.log(res);
-
-
         let adoptedNumber=Object.keys(res).length;
-        console.log(Object.keys(res).length);
         numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Adopted ${adoptedNumber}</div></a>`;
-        adoptedNumber=Object.keys(res).length;
-        return;
     });
-};
-*/
-function renderCartInfo(){
-        numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Adopted ${adoptedNumber}</div></a>`;   
 };
 
 
@@ -176,13 +168,7 @@ function adoptThisCat(adoptedItemBtn){
             }
         }) 
     }
-
-    function renderCartAfterAdopt(){
-        numberHtml.innerHTML="";
-        adoptedNumber++;
-        numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Adopted ${adoptedNumber}</div></a>`;
-    }
-
+    
     id.forEach(function(id){
         if(id==catID){
             return;
@@ -194,9 +180,9 @@ function adoptThisCat(adoptedItemBtn){
     if(x==id.length){
         console.log(catID);
         id.push(catID);
-
-        renderCartAfterAdopt();
         sendToDB();
+        renderCartInfo();
+
     }else{
         alert('This Cat is Already In The Cart.');
         return;

@@ -75,7 +75,7 @@
 function getDataRender(totalItems){
 
     $.get(` https://catropolis-55dac-default-rtdb.firebaseio.com/User-Cart/${user}/.json`, null, function (res) {
-        console.log(Object.keys(res));
+        console.log(Object.values(res));
         Object.keys(res).forEach(function (id) {
             adoptedCats.innerHTML+=
                 `
