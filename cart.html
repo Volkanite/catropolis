@@ -71,17 +71,13 @@
 
     let user = $.cookie("user");
     const adoptedCats = document.querySelector('#cart-items');
-    let id=[];
 
 function getDataRender(totalItems){
 
     $.get(` https://catropolis-55dac-default-rtdb.firebaseio.com/User-Cart/${user}/.json`, null, function (res) {
-
-        let id=Object.keys(res);
-        console.log(id);
-        
-            id.forEach(function (id) {
-                adoptedCats.innerHTML+=
+        console.log(Object.keys(res));
+        Object.keys(res).forEach(function (id) {
+            adoptedCats.innerHTML+=
                 `
                 <div class="adopted-cat">
                 <div class="img"><img src="${totalItems[id].image_link}"/></div>
@@ -92,7 +88,7 @@ function getDataRender(totalItems){
                 </div>
                 <hr>
                 `;
-            })
+        })
     })
 }    
 
@@ -113,17 +109,6 @@ function getDataRender(totalItems){
         
     }
   
-    
-    
-/*
-    function del(deleteCat){
-        for(let i=0; i<id.length; i++){
-            if(id[i]===deleteCat.dataset.id){
-                id.splice(i, 1);
-            }
-        }
-        renderItem(totalItems);
-    };
-*/
+
 </script>
 </html>
