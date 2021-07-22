@@ -4,4 +4,18 @@
     <div class="nav two"><a href="have-fun.html">Have Fun</a></div>
     <div class="nav three"><a href="team.html">Our Team</a></div>
     <div class="nav four"><a href="contact.html">Contact</a></div>
+    <div class="cart-number"></div>
 </div>
+<!--
+<script>
+const numberHtml=document.getElementsByClassName("cart-number");
+
+$(document).ready(function(){
+    $.get(` https://catropolis-55dac-default-rtdb.firebaseio.com/User-Cart/${user}/.json`, null, function (res) {
+            console.log(res);
+            let adoptedNumber=Object.keys(res).length;
+            numberHtml[0].innerHTML=`<a href="cart.html?id=${id}" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
+        });
+    })
+</script>
+-->

@@ -42,17 +42,41 @@ body {
   top:30px;
 }
 .header .one{
-  right:60%;
+  right:65%;
 }
 .header .two{
-  right:45%;
+  right:50%;
 }
 .header .three{
-  right:30%;
+  right:35%;
 }
 .header .four{
-  right:15%;
+  right:20%;
 }
+
+.cart-number{
+  display:inline-block;
+  position: absolute;
+  right:0px;
+  z-index: 100;
+  width: 150px;
+  height: 50px;
+  background-color: #222249;
+
+  font-size:20px;
+  padding: 30px 0px 0px 0px;
+
+  
+}
+
+.cart-number a,.cart-number a:link,.cart-number a:visited{
+  text-decoration: none;
+  color: rgb(250, 239, 142);
+}
+.cart-number a:hover{
+  text-decoration: none;
+}
+
 
 /*Slider*/
 .slider{
@@ -219,26 +243,6 @@ body {
   margin-right: auto;
 }
 
-.cart{
-  z-index: 100;
-  position: relative;
-  /*top: 280px;*/
-  width: 200px;
-  height: 50px;
-  background-color: #222249;
-  color: rgb(247, 242, 242);
-  font-size:30px;
-  padding: 20px 0px 10px 70px;
-  border-radius: 5px;
-  
-}
-
-.cart-number a,.cart-number a:link,.cart-number a:visited{
-  text-decoration: none
-}
-.cart-number a:hover{
-  text-decoration: none;
-}
 
 
 .adopt-btn{
