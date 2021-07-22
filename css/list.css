@@ -208,13 +208,16 @@ body {
 
 #items_layout{
   position: relative;
-  top: 260px;
+  top: 0px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cart{
   z-index: 100;
   position: relative;
-  top: 280px;
+  /*top: 280px;*/
   width: 200px;
   height: 50px;
   background-color: #222249;
