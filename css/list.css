@@ -61,7 +61,7 @@ body {
 
 .slider img{
   width:100%;
-  height: calc(100vw * (50/217)); /* 1519 x 350 */
+  height: calc(23vw);
   left:0;
   /*display:none;*/
 }
