@@ -1,5 +1,4 @@
 
-
 $( "header" ).load( "layout/header.html",function(){
     const numberHtml=document.getElementsByClassName("cart-number");
     let user = $.cookie("user");
