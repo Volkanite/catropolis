@@ -144,13 +144,23 @@ $(document).ready(function(){
 function renderCartInfo(){
     $.get(` https://catropolis-55dac-default-rtdb.firebaseio.com/User-Cart/${user}/.json`, null, function (res) {
         console.log(res);
+        adoptedNumber=Object.values(res).length;
+        /*
         let adoptedNumber=0;
         if(res==null){
             adoptedNumber=0;
         }else{
-            adoptedNumber=Object.keys(res).length;
+            let adoptedNumber_array=Object.values(res);
+            adoptedNumber_array.forEach(function(object){
+                let index=0;
+                if(object==null){
+                    adoptedNumber_array.splice(index, 1);
+                }
+            })
+            console.log(adoptedNumber_array);
+            adoptedNumber=adoptedNumber_array.length;
 
-        }
+        }*/
         numberHtml[0].innerHTML=`<a href="cart.html" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
         
     });
@@ -167,7 +177,7 @@ function adoptThisCat(adoptedItemBtn){
         let data={
             id:catID
         };
-        firebase.database().ref("User-Cart/" + user +"/"+ data.id ).set(data, function (error) {    
+        firebase.database().ref("User-Cart/" + user ).push(data, function (error) {    //set丟指定的資料; push自動給一個key值
             if (error) {
                 console.log(error); 
             } else {
