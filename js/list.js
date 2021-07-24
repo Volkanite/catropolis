@@ -123,13 +123,12 @@ readJSONFile("./seeders/item.json")
 
 
 
-
-//----------------Cart
+/*
+//----------------Cart--------------------
 
 let adoptedNumber=0;
 const numberHtml=document.getElementsByClassName("cart-number");
 let id=[];
-
 
 
 //Delete it after sign-in system built
@@ -183,7 +182,6 @@ function adoptThisCat(adoptedItemBtn){
     if(x==id.length){
         console.log(catID);
         id.push(catID);
-        debugger;
         sendToDB();
 
     }else{
@@ -192,7 +190,7 @@ function adoptThisCat(adoptedItemBtn){
     }  
 }
 
-
+*/
 
 
 
