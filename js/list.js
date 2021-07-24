@@ -125,7 +125,7 @@ readJSONFile("./seeders/item.json")
 
 
 //----------------Cart
-let user = $.cookie("user");
+
 let adoptedNumber=0;
 const numberHtml=document.getElementsByClassName("cart-number");
 let id=[];
@@ -142,25 +142,11 @@ $(document).ready(function(){
 
 
 function renderCartInfo(){
+    let user = $.cookie("user");
     $.get(` https://catropolis-55dac-default-rtdb.firebaseio.com/User-Cart/${user}/.json`, null, function (res) {
         console.log(res);
         adoptedNumber=Object.values(res).length;
-        /*
-        let adoptedNumber=0;
-        if(res==null){
-            adoptedNumber=0;
-        }else{
-            let adoptedNumber_array=Object.values(res);
-            adoptedNumber_array.forEach(function(object){
-                let index=0;
-                if(object==null){
-                    adoptedNumber_array.splice(index, 1);
-                }
-            })
-            console.log(adoptedNumber_array);
-            adoptedNumber=adoptedNumber_array.length;
-
-        }*/
+       
         numberHtml[0].innerHTML=`<a href="cart.html" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
         
     });
@@ -177,12 +163,13 @@ function adoptThisCat(adoptedItemBtn){
         let data={
             id:catID
         };
-        firebase.database().ref("User-Cart/" + user ).push(data, function (error) {    //set丟指定的資料; push自動給一個key值
+        firebase.database().ref("User-Cart/" + user ).push(data, function (error) {    //set丟指定的資料; push自動給一個key值 ;data後面的func是 callback function,會在前面資料拿到之後才執行
             if (error) {
                 console.log(error); 
             } else {
                 alert('The Cat Is Added To Your Adoption-Cart!  Click Your Cart To Check Cats You Adopt.');
             }
+            renderCartInfo();
         }) 
     }
     
@@ -197,8 +184,8 @@ function adoptThisCat(adoptedItemBtn){
     if(x==id.length){
         console.log(catID);
         id.push(catID);
+        debugger;
         sendToDB();
-        renderCartInfo();
 
     }else{
         alert('This Cat is Already In The Cart.');
