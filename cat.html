@@ -34,7 +34,7 @@
 <script>
     let catId = 0;
 
-    function layoutItems(items) {
+    function layoutItemsCat(items) {
 
         let items_layout_query = document.getElementById('cat_items_layout');
         items_layout_query.innerHTML = ' ';
@@ -70,12 +70,12 @@
         document.innerHTML += items_layout_query.innerHTML;
     }
 
-    function readJSONFile(file) {
+    function readJSONFile2(file) {
         fetch(file).then(response => {
             return response.json();
         }).then(data => {
             totalItems = data.items;
-            layoutItems(totalItems);
+            layoutItemsCat(totalItems);
         });
     }
 
@@ -88,7 +88,7 @@
         id = id.substr(4);
         catId = parseInt(id);
 
-        readJSONFile("./seeders/item.json");
+        readJSONFile2("./seeders/item.json");
     }
 
     /* Database GET */

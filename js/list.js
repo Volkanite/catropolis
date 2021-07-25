@@ -117,7 +117,11 @@ function readJSONFile(file) {
     });
 }
 
-readJSONFile("./seeders/item.json")
+
+function startListRender()
+{
+    readJSONFile("./seeders/item.json");
+}
 
 
 
