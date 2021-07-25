@@ -57,10 +57,8 @@ body {
 .cart-number{
   display:inline-block;
   position: absolute;
-  right:0px;
+  right:30px;
   z-index: 100;
-  width: 150px;
-  height: 50px;
   background-color: #222249;
   font-size:20px;
   font-weight: 900;
@@ -257,15 +255,67 @@ body {
 
 
 /* 調整列表內容的parent的寬度，只列表內容自動調到下一排 */
-@media screen and (max-width:600px) {
-    section {
-        width: 100%;
-        vertical-align: center;
-    }
-    .item_name{
-        font-size: 23px;
-        margin: 3px;
-        padding: 3px;
-        
-    }
+@media screen and (max-width:430px) {
+  .header{
+    width: 100%;  
+}
+  .header .logo{
+    display:none;
+  }
+  .header .nav{
+    font-size: 14px;
+  }
+  .header .one{
+    left:15px;
+  }
+  .header .two{
+    right:54%;
+  }
+  .header .three{
+    right:29%;
+  }
+  .header .four{
+    display:none;
+  }
+  .cart-number{
+    right:10px;
+    font-size:16px;
+    font-weight: 900;
+    padding: 30px 0px 0px 0px;
+  
+    
+  }
+  .section1{
+    position:relative;
+    top: 30px;
+}
+
+
+#items_layout{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  }
+
+.item {
+  max-width: 240px;
+  display: inline-block;
+}
+
+.item_body li{
+  font-size: 14px;
+  
+}
+
+.filter-division {
+  flex: 100%;
+}
+
+
+.pagination_div{
+  margin-right: 40px;
+}
+
+
 }

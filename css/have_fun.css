@@ -122,13 +122,3 @@ h2{
     }
 }
 
-@media(max-width:500px) {
-    .items-layout{
-        margin-left: 0%;
-        margin-right: 0%;
-    }
-    .one-card {
-        max-width:90%;
-    }
-}
-
