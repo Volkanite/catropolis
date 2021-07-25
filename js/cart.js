@@ -29,7 +29,7 @@ function renderCartInfo(){
 };
 
 
-function adoptThisCat(adoptedItemBtn){ 
+function adoptThisCat(adoptedItemBtn, currentPage){ 
     let id_no=Number(adoptedItemBtn.dataset.id);
     let catID=(id_no+(currentPage-1)*8);
     let x=0;
