@@ -55,7 +55,7 @@
                 item_html += '<div><span class=item_name>' + item.name + '</span>';
                 item_html += '<span class=item_type>' + item.type + '</span></div>';
                 item_html += '<button class="listen-btn" onclick="playCatSound()" data-id="' + id + '"> Listen </button>';
-                item_html += '<button class="adopt-btn" onclick="adoptThisCat(this,currentPage)" data-id="' + id + '"> Adopt </button>';
+                item_html += '<button class="adopt-btn" onclick="adoptThisCat(this,1)" data-id="' + id + '"> Adopt </button>';
                 item_html += '<div class=item_body>';
                 item_html += '<div class=item_attr><ul><li>age:' + item.age + '</li><li>' + item.gender + '</li><li>' + item.description + '</li></ul></div>';
                 item_html += '</div>';
@@ -119,6 +119,34 @@
     }
 
     loadData();
+</script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+        apiKey: "AIzaSyBrZx3TblBX2_LPTerV8NJW_NnoyGCvp_0",
+        authDomain: "catropolis-55dac.firebaseapp.com",
+        databaseURL: "https://catropolis-55dac-default-rtdb.firebaseio.com",
+        projectId: "catropolis-55dac",
+        storageBucket: "catropolis-55dac.appspot.com",
+        messagingSenderId: "474146613497",
+        appId: "1:474146613497:web:d3accd00e71146340b1a28",
+        measurementId: "G-GWR0NP23YG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
 </script>
 
 </html>
