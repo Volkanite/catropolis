@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/list.css"/>
     <script defer src="js/layout.js"></script>
+    <script defer src="js/cart.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     
 
@@ -54,7 +55,7 @@
                 item_html += '<div><span class=item_name>' + item.name + '</span>';
                 item_html += '<span class=item_type>' + item.type + '</span></div>';
                 item_html += '<button class="listen-btn" onclick="playCatSound()" data-id="' + id + '"> Listen </button>';
-                item_html += '<button class="adopt-btn" onclick="adoptThisCat(this)" data-id="' + id + '"> Adopt </button>';
+                item_html += '<button class="adopt-btn" onclick="adoptThisCat(this,currentPage)" data-id="' + id + '"> Adopt </button>';
                 item_html += '<div class=item_body>';
                 item_html += '<div class=item_attr><ul><li>age:' + item.age + '</li><li>' + item.gender + '</li><li>' + item.description + '</li></ul></div>';
                 item_html += '</div>';

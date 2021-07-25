@@ -94,7 +94,7 @@ function layoutItems(items){
         item_html+='<span class=item_type>'+item.type+'</span></div>';
         item_html+='<div class=item_body>';
         item_html+='<div class=item_attr><ul><li>age:'+item.age+'</li><li>'+item.gender+'</li><li>'+item.description+'</li></ul></div>';
-        item_html+='<button class="adopt-btn" onclick="adoptThisCat(this)" data-id="'+ (id++) +'"> Adopt </button>';
+        item_html+='<button class="adopt-btn" onclick="adoptThisCat(this,currentPage)" data-id="'+ (id++) +'"> Adopt </button>';
         item_html+='</div>';
         item_html+='</div>';
 
