@@ -6,17 +6,21 @@
     <meta charset="UTF-16">
     <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script> <!--for cookies-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <!--for cookies-->
     <script defer src="js/layout.js"></script>
-    
+
     <link rel="stylesheet" type="text/css" href="css/list.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="css/cart.css" />
-    
+
 </head>
 <header></header>
+
 <body>
-    <div class="title"><h2>Cart</h2></div>
+    <div class="title">
+        <h2>Cart</h2>
+    </div>
     <div id="cart-items"></div>
     <button></button>
 </body>
@@ -65,22 +69,22 @@
     }
     readJSONFile("./seeders/item.json")
 
-/*
-    var params = new URLSearchParams(window.location.search);
-    let id = params.get("id").split(",");
- */   
+    /*
+        var params = new URLSearchParams(window.location.search);
+        let id = params.get("id").split(",");
+     */
 
     let user = $.cookie("user");
     const adoptedCats = document.querySelector('#cart-items');
 
-function getDataRender(totalItems){
+    function getDataRender(totalItems) {
 
-    $.get(` https://catropolis-55dac-default-rtdb.firebaseio.com/User-Cart/${user}/.json`, null, function (res) {
-        console.log(Object.values(res));     //object.keys相容性比較好
-        Object.keys(res).forEach(function (key) {
-            let id=res[key].id;
-            adoptedCats.innerHTML+=
-                         `
+        $.get(` https://catropolis-55dac-default-rtdb.firebaseio.com/User-Cart/${user}/.json`, null, function (res) {
+            console.log(Object.values(res));     //object.keys相容性比較好
+            Object.keys(res).forEach(function (key) {
+                let id = res[key].id;
+                adoptedCats.innerHTML +=
+                    `
                             <div class="adopted-cat">
                             <div class="img"><img src="${totalItems[id].image_link}"/></div>
                             <div class="name">${totalItems[id].name}</div>
@@ -90,57 +94,82 @@ function getDataRender(totalItems){
                             </div>
                             <hr>
                         `;
-        })   
-      
+            })
 
 
-        /*
-        Object.values(res).forEach(function (object) {
-            if(object==null){
-                return;
-            }else{
-                let id=object["id"];
 
-                if(id==null){
+            /*
+            Object.values(res).forEach(function (object) {
+                if(object==null){
                     return;
                 }else{
-                    adoptedCats.innerHTML+=
-                         `
-                            <div class="adopted-cat">
-                            <div class="img"><img src="${totalItems[id].image_link}"/></div>
-                            <div class="name">${totalItems[id].name}</div>
-                            <div class="type">${totalItems[id].type}</div>
-                            <div class="gender">${totalItems[id].gender}</div>
-                            <div class="delete" onclick="deleteCat(this)" data-id="${id}">x</div>
-                            </div>
-                            <hr>
-                        `;
-
-                } 
-            }
-            
-            
-        })*/
-    })
-}    
-
-
-    function deleteCat(item){ 
-        console.log(item);
-        let comfirmed=confirm("Do you really want to delete this");
-        if(comfirmed){
-            firebase.database().ref(`User-Cart/${user}/`+item.dataset.id).remove().then(function(error) {
-                if(error){
-                    console.log("failed: " + error.message)
-                }else{
-                    alert("succeeded");
-                    location.reload();
-                }    
-            })
-        }
-        
+                    let id=object["id"];
+    
+                    if(id==null){
+                        return;
+                    }else{
+                        adoptedCats.innerHTML+=
+                             `
+                                <div class="adopted-cat">
+                                <div class="img"><img src="${totalItems[id].image_link}"/></div>
+                                <div class="name">${totalItems[id].name}</div>
+                                <div class="type">${totalItems[id].type}</div>
+                                <div class="gender">${totalItems[id].gender}</div>
+                                <div class="delete" onclick="deleteCat(this)" data-id="${id}">x</div>
+                                </div>
+                                <hr>
+                            `;
+    
+                    } 
+                }
+                
+                
+            })*/
+        })
     }
-  
+
+
+    function deleteCat(item) {
+
+        let key = null;
+        $.get(` https://catropolis-55dac-default-rtdb.firebaseio.com/User-Cart/${user}/.json`, null, function (res) {
+            console.log(res);
+            console.log(Object.values(res));
+            Object.values(res).forEach(function (object) {
+                let value=object["id"];
+                let index = 0;
+                if (value == item.dataset.id) {
+                    key = Object.keys(res)[index];
+                    console.log(key);
+
+
+
+                    let comfirmed = confirm("Do you really want to delete this");
+                    if (comfirmed) {
+                        firebase.database().ref(`User-Cart/${user}/`+key).remove().then(function (error) {
+                            if (error) {
+                                console.log("failed: " + error.message)
+                            } else {
+                                alert("succeeded");
+                                location.reload();
+                            }
+                        })
+                    }
+
+
+
+
+
+                } else {
+                    index++;
+                }
+            })
+
+        })
+
+    }
+
 
 </script>
+
 </html>
