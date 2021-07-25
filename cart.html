@@ -76,20 +76,51 @@
 function getDataRender(totalItems){
 
     $.get(` https://catropolis-55dac-default-rtdb.firebaseio.com/User-Cart/${user}/.json`, null, function (res) {
-        console.log(Object.values(res));
-        Object.keys(res).forEach(function (id) {
+        console.log(Object.values(res));     //object.keys相容性比較好
+        Object.keys(res).forEach(function (key) {
+            let id=res[key].id;
             adoptedCats.innerHTML+=
-                `
-                <div class="adopted-cat">
-                <div class="img"><img src="${totalItems[id].image_link}"/></div>
-                <div class="name">${totalItems[id].name}</div>
-                <div class="type">${totalItems[id].type}</div>
-                <div class="gender">${totalItems[id].gender}</div>
-                <div class="delete" onclick="deleteCat(this)" data-id="${id}">x</div>
-                </div>
-                <hr>
-                `;
-        })
+                         `
+                            <div class="adopted-cat">
+                            <div class="img"><img src="${totalItems[id].image_link}"/></div>
+                            <div class="name">${totalItems[id].name}</div>
+                            <div class="type">${totalItems[id].type}</div>
+                            <div class="gender">${totalItems[id].gender}</div>
+                            <div class="delete" onclick="deleteCat(this)" data-id="${id}">x</div>
+                            </div>
+                            <hr>
+                        `;
+        })   
+      
+
+
+        /*
+        Object.values(res).forEach(function (object) {
+            if(object==null){
+                return;
+            }else{
+                let id=object["id"];
+
+                if(id==null){
+                    return;
+                }else{
+                    adoptedCats.innerHTML+=
+                         `
+                            <div class="adopted-cat">
+                            <div class="img"><img src="${totalItems[id].image_link}"/></div>
+                            <div class="name">${totalItems[id].name}</div>
+                            <div class="type">${totalItems[id].type}</div>
+                            <div class="gender">${totalItems[id].gender}</div>
+                            <div class="delete" onclick="deleteCat(this)" data-id="${id}">x</div>
+                            </div>
+                            <hr>
+                        `;
+
+                } 
+            }
+            
+            
+        })*/
     })
 }    
 
