@@ -22,7 +22,7 @@ $("header").load("layout/header.html", function () {
     g_cartShowed = params.get("g_cartShowed");
     console.log(g_cartShowed);
 
-    if (g_cartShowed == false) {
+    if (g_cartShowed === false) {
         console.log(g_cartShowed);
         return;
     } else {
