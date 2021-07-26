@@ -24,7 +24,12 @@ function renderCartInfo(){
             adoptedNumber=Object.keys(res).length;
         }
         numberHtml[0].innerHTML=`<a href="cart.html"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
-        
+        id=[];
+        Object.values(res).forEach(function(object){
+            id.push(object["id"]);
+        })
+        console.log(id);
+      
     });
 };
 
@@ -59,7 +64,6 @@ function adoptThisCat(adoptedItemBtn, currentPage){
 
     if(x==id.length){
         console.log(catID);
-        id.push(catID);
         sendToDB();
 
     }else{
