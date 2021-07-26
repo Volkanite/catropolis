@@ -132,12 +132,10 @@
     function deleteCat(item) {
 
         let key = null;
+        let index = 0;
         $.get(` https://catropolis-55dac-default-rtdb.firebaseio.com/User-Cart/${user}/.json`, null, function (res) {
-            console.log(res);
-            console.log(Object.values(res));
             Object.values(res).forEach(function (object) {
                 let value=object["id"];
-                let index = 0;
                 if (value == item.dataset.id) {
                     key = Object.keys(res)[index];
                     console.log(key);
@@ -162,6 +160,7 @@
 
                 } else {
                     index++;
+                    return;
                 }
             })
 
