@@ -23,7 +23,7 @@ function renderCartInfo(){
         }else{
             adoptedNumber=Object.keys(res).length;
         }
-        numberHtml[0].innerHTML=`<a href="cart.html" target="_blank"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
+        numberHtml[0].innerHTML=`<a href="cart.html"><div class="cart"><i class="bi bi-cart-fill"></i> Cart ${adoptedNumber}</div></a>`;
         
     });
 };
