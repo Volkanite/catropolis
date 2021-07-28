@@ -8,7 +8,7 @@ let id=[];
 //Delete it after sign-in system built
 $(document).ready(function(){
     if(!$.cookie("user")||$.cookie("user")===null){
-        let user=prompt("Please enter User name","Type your name here");
+        let user=prompt("Please enter User name","");
         $.cookie("user",user);
     }
 });
